@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Calculator {
@@ -25,7 +27,7 @@ public class Calculator {
         System.out.println( "You will need " + paintNeededToBuy + "L to paint your wall.");
         System.out.println("You will need to buy a " + Math. ceil(paintNeededToBuy) + "L bucket or larger to complete the wall.");
         */
-        int x = 50;
+        /*int x = 50;
         int y = 50;
         if (x==y){
             System.out.println("1");
@@ -33,6 +35,21 @@ public class Calculator {
             System.out.println("2");
         } else {
             System.out.println("3");
+        }*/
+
+        HashMap<String, ArrayList> areas = new HashMap<String, ArrayList>();
+        ArrayList<Double> walls = new ArrayList<Double>();
+        areas.put("paintLayers", walls);
+        walls.add(0, 3.3d);
+        walls.add(1, 4.7d);
+        areas.replace("paintLayers", walls);
+        walls = areas.get("paintLayers");
+        for (Double a: walls
+             ) {
+            System.out.println(a);
         }
+        System.out.println(areas.get("paintLayers"));
+        System.out.println(areas);
+
     }
 }
