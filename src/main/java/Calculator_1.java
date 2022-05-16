@@ -3,8 +3,6 @@ import java.util.Scanner;
 
 public class Calculator_1 {
     public static void main(String[] args){
-        Scanner myScanner = new Scanner(System.in);
-
         HashMap<String, Double> areas = new HashMap<String, Double>();
         areas.put("paintLayers", 0.0);
         areas.put("totalWallArea", 0.0);
@@ -159,20 +157,5 @@ public class Calculator_1 {
     }
 
 
-
-    /*System.out.print("What is the area of the unpainted wall?");
-        double wallUnpainted = myScanner.nextDouble();
-        System.out.println("The area of unpainted wall is " + wallUnpainted + "m^2");
-
-        double wallPaintArea = wallArea - wallUnpainted;
-        System.out.println(wallPaintArea + "m^2 to be painted");
-
-        System.out.println("you need on average 100ml of paint for 1m^2");
-        double paint1m = 0.1d;
-        double paintNeeded = wallPaintArea * paint1m;
-        double paintNeededToBuy = Math.round(paintNeeded*100.0)/100.0;
-
-        System.out.println( "You will need " + paintNeededToBuy + "L to paint your wall.");
-        System.out.println("You will need to buy a " + Math. ceil(paintNeededToBuy) + "L bucket or larger to complete the wall.");*/
 
 }
