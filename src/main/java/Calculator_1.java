@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Calculator_1 {
     public static void main(String[] args){
+
         HashMap<String, Double> areas = new HashMap<String, Double>();
         areas.put("paintLayers", 0.0);
         areas.put("totalWallArea", 0.0);
@@ -16,7 +17,7 @@ public class Calculator_1 {
         call(areas);
     }
 
-    static void call(HashMap<String, Double> areas){
+    public static void call(HashMap<String, Double> areas){
         wall(areas);
         door(areas);
         window(areas);
@@ -33,7 +34,7 @@ public class Calculator_1 {
     private static void exit() {
     }
 
-    static HashMap wall(HashMap<String, Double> areas) {
+    public static HashMap wall(HashMap<String, Double> areas) {
         Scanner myScanner = new Scanner(System.in);
         double totalWallArea = 0.0;
         System.out.print("how many walls are you painting: ");
@@ -63,7 +64,7 @@ public class Calculator_1 {
         return areas;
     }
 
-    static HashMap door(HashMap<String, Double> areas) {
+    public static HashMap door(HashMap<String, Double> areas) {
         Scanner myScanner = new Scanner(System.in);
         double totalDoorArea = 0.0;
         System.out.print("how many doors: ");
@@ -85,7 +86,7 @@ public class Calculator_1 {
         return areas;
     }
 
-    static HashMap window(HashMap<String, Double> areas) {
+    public static HashMap window(HashMap<String, Double> areas) {
         Scanner myScanner = new Scanner(System.in);
         double totalWindowArea = 0.0;
         System.out.print("how many windows: ");
@@ -107,7 +108,7 @@ public class Calculator_1 {
         return areas;
     }
 
-    static HashMap fixture(HashMap<String, Double> areas) {
+    public static HashMap fixture(HashMap<String, Double> areas) {
         Scanner myScanner = new Scanner(System.in);
         double totalFixtureArea = 0.0;
         System.out.print("how many fixtures: ");
@@ -129,27 +130,27 @@ public class Calculator_1 {
         return areas;
     }
 
-    static HashMap notPainted(HashMap<String, Double> areas) {
+    public static HashMap notPainted(HashMap<String, Double> areas) {
         Double excludedArea = areas.get("totalDoorArea") + areas.get("totalWindowArea") + areas.get("totalFixtureArea");
         areas.replace("totalNotPaintedArea", excludedArea);
         return areas;
     }
 
-    static HashMap painted(HashMap<String, Double> areas) {
+    public static HashMap painted(HashMap<String, Double> areas) {
         Double paintedArea = areas.get("totalWallArea") - areas.get("totalNotPaintedArea");
         paintedArea = Math.round(paintedArea*100.0)/100.0;
         areas.replace("totalPaintedArea", paintedArea);
         return areas;
     }
 
-    static HashMap paintAmountNeeded(HashMap<String, Double> areas) {
+    public static HashMap paintAmountNeeded(HashMap<String, Double> areas) {
         Double paintNeeded = ((areas.get("totalPaintedArea")) * 0.1) * areas.get("paintLayers");
         paintNeeded = Math.round(paintNeeded*100.0)/100.0;
         areas.replace("paintNeeded", paintNeeded);
         return areas;
     }
 
-    static HashMap paintToBuy(HashMap<String, Double> areas) {
+    public static HashMap paintToBuy(HashMap<String, Double> areas) {
         Double paintNeededToBuy = ((areas.get("totalPaintedArea")) * 0.1) * areas.get("paintLayers");
         paintNeededToBuy = Math.ceil((Math.round(paintNeededToBuy*100.0)/100.0));
         areas.replace("paintNeededToBuy", paintNeededToBuy);
